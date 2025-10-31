@@ -20,20 +20,12 @@ st.markdown("""
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
 
-    /* Hero Section */
-    .hero {
-        background: #FFD95B;
+    /* Hero Section - now just text styling without background card */
+    .hero-content {
         color: #4B1F1A;
-        padding: 60px 40px;
+        padding: 40px 20px;
         text-align: center;
-        border-radius: 15px;
         margin: 20px 0 50px 0;
-        box-shadow: 0 10px 30px rgba(75, 31, 26, 0.2);
-        min-height: 600px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 
     /* Profile Picture */
@@ -49,8 +41,8 @@ st.markdown("""
         box-shadow: 0 10px 30px rgba(75, 31, 26, 0.2);
     }
 
-    /* Style Streamlit images in hero section */
-    .hero img {
+    /* Style profile images */
+    .profile-image img {
         border-radius: 50%;
         border: 5px solid #e6187f;
         box-shadow: 0 10px 30px rgba(75, 31, 26, 0.2);
@@ -65,7 +57,7 @@ st.markdown("""
         text-align: center;
     }
 
-    .hero .tagline {
+    .hero-content .tagline {
         font-size: 1.3rem;
         margin: 20px auto 40px auto;
         color: #4B1F1A;
@@ -73,7 +65,7 @@ st.markdown("""
         font-weight: 500;
     }
 
-    .hero .about-text {
+    .hero-content .about-text {
         font-size: 1.1rem;
         line-height: 1.8;
         margin: 30px auto;
@@ -235,7 +227,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Hero Section
-st.markdown('<div class="hero">', unsafe_allow_html=True)
 
 # Profile Picture
 # Load and display the profile image
@@ -244,7 +235,9 @@ try:
     profile_img = Image.open('/mnt/user-data/outputs/profile_image.png')
     col_img1, col_img2, col_img3 = st.columns([1, 1, 1])
     with col_img2:
+        st.markdown('<div class="profile-image">', unsafe_allow_html=True)
         st.image(profile_img, width=180, use_container_width=False)
+        st.markdown('</div>', unsafe_allow_html=True)
 except:
     # Fallback to placeholder if image loading fails
     st.markdown("""
@@ -284,33 +277,35 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown('</div>', unsafe_allow_html=True)
-
 # Featured Projects Section
 st.markdown('<h2 class="section-title">Featured Projects</h2>', unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns(3)
+# First row - Law Compliance RAG (full width)
+st.markdown("""
+<div class="project-card">
+    <span style="background: #e6187f; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Featured</span>
+    <h3>Law Compliance RAG Assistant</h3>
+    <p>Designed an AI system that retrieves and summarizes relevant laws and regulations to answer compliance queries with citations. Built a hybrid search pipeline combining keyword search, semantic search, and metadata filtering for production-grade performance.</p>
+    <div>
+        <span class="tech-tag">Claude AI</span>
+        <span class="tech-tag">RAG</span>
+        <span class="tech-tag">LangChain</span>
+        <span class="tech-tag">Vector Database</span>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+st.link_button("View Project", "https://github.com/juliajiang218")
+
+# Second row - DRL Trading System and ETL Pipeline (side by side)
+col1, col2 = st.columns(2)
 
 with col1:
     st.markdown("""
     <div class="project-card">
-        <span style="background: #e6187f; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Featured</span>
-        <h3>Law Compliance RAG Assistant</h3>
-        <p>Designed an AI system that retrieves and summarizes relevant laws and regulations to answer compliance queries with citations. Built a hybrid search pipeline combining keyword search, semantic search, and metadata filtering for production-grade performance.</p>
-        <div>
-            <span class="tech-tag">Claude AI</span>
-            <span class="tech-tag">RAG</span>
-            <span class="tech-tag">LangChain</span>
-            <span class="tech-tag">Vector Database</span>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-    st.link_button("View Project", "https://github.com/juliajiang218")
-
-with col2:
-    st.markdown("""
-    <div class="project-card">
         <h3>DRL Trading System</h3>
+        <div style="margin: 15px 0;">
+            <img src="https://via.placeholder.com/300x200?text=DRL+Trading+Demo" alt="DRL Trading System" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 2px solid #e6187f;">
+        </div>
         <p>Engineered a cloud-based deep reinforcement learning trading system with 181-dimensional feature engineering pipelines using 20+ years of financial data. Deployed on AWS with real-time data ingestion and TensorFlow monitoring.</p>
         <div>
             <span class="tech-tag">Python</span>
@@ -322,20 +317,23 @@ with col2:
     """, unsafe_allow_html=True)
     st.link_button("View Code", "https://github.com/juliajiang218/DRLTrader.git")
 
-with col3:
+with col2:
     st.markdown("""
     <div class="project-card">
-        <h3>Credit Card Fraud Detection</h3>
-        <p>Developed a hybrid anomaly detection system achieving 95.4% AUC-ROC for credit card fraud detection. Implemented automated EDA, data preprocessing, model evaluation, and synthetic testing pipelines.</p>
+        <h3>ETL Movie Recommendation Pipeline</h3>
+        <div style="margin: 15px 0;">
+            <img src="https://via.placeholder.com/300x200?text=ETL+Pipeline+Demo" alt="ETL Movie Pipeline" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 2px solid #e6187f;">
+        </div>
+        <p>Built a robust ETL pipeline ingesting and transforming 1,000+ movie records from multiple sources, achieving sub-second query performance. Designed normalized relational schemas and indexes to handle large-scale data efficiently.</p>
         <div>
-            <span class="tech-tag">Machine Learning</span>
-            <span class="tech-tag">Anomaly Detection</span>
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Data Pipeline</span>
+            <span class="tech-tag">SQL</span>
+            <span class="tech-tag">ETL Process</span>
+            <span class="tech-tag">Database Design</span>
+            <span class="tech-tag">SQLite</span>
         </div>
     </div>
     """, unsafe_allow_html=True)
-    st.link_button("View Code", "https://github.com/juliajiang218/FraudDetection.git")
+    st.link_button("View Code", "https://github.com/juliajiang218/ETL-Pipeline.git")
 
 # Experience Section
 st.markdown('<h2 class="section-title">Professional Experience</h2>', unsafe_allow_html=True)
@@ -425,29 +423,6 @@ st.markdown("""
     <p><strong>Relevant Coursework:</strong> Safety and Explainability of Reinforcement Learning (Graduate), Data Mining, Database Systems, Cloud Computing, Architecting HPC Clusters</p>
 </div>
 """, unsafe_allow_html=True)
-
-# Contact Section
-st.markdown('<h2 class="section-title">Get In Touch</h2>', unsafe_allow_html=True)
-
-col1, col2, col3 = st.columns([1, 2, 1])
-
-with col2:
-    st.markdown("""
-    <div class="project-card" style="text-align: center;">
-        <h3>Let's Connect!</h3>
-        <p>I'm always interested in discussing data science opportunities, research collaborations, and innovative projects. Feel free to reach out!</p>
-        <div style="margin: 20px 0;">
-            <p><strong>📧 Email:</strong> julia.beijia.jiang@gmail.com</p>
-            <p><strong>📱 Phone:</strong> (+1) 347-429-3548</p>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    col_btn1, col_btn2 = st.columns(2)
-    with col_btn1:
-        st.link_button("📧 Email Me", "mailto:julia.beijia.jiang@gmail.com")
-    with col_btn2:
-        st.link_button("💼 LinkedIn", "https://linkedin.com/in/juliajiang03218")
 
 # Footer
 st.markdown("---")
