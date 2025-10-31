@@ -8,7 +8,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Custom CSS with new color scheme
+# Custom CSS for hero section
 st.markdown("""
 <style>
     /* Main background and text colors */
@@ -99,105 +99,6 @@ st.markdown("""
         transform: scale(1.1);
     }
 
-    /* Project Cards */
-    .project-card {
-        background: white;
-        border-radius: 15px;
-        padding: 25px;
-        margin: 20px 0;
-        box-shadow: 0 10px 30px rgba(75, 31, 26, 0.1);
-        border: 3px solid #e6187f;
-        transition: transform 0.3s ease;
-    }
-
-    .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(75, 31, 26, 0.2);
-    }
-
-    .project-card h3 {
-        color: #4B1F1A;
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-    }
-
-    .project-card p {
-        color: #4B1F1A;
-        line-height: 1.8;
-    }
-
-    /* Tech Tags */
-    .tech-tag {
-        display: inline-block;
-        background: #FFD95B;
-        padding: 5px 12px;
-        border-radius: 15px;
-        font-size: 0.85rem;
-        color: #4B1F1A;
-        margin: 5px 5px 5px 0;
-        font-weight: 500;
-    }
-
-    /* Skill Cards */
-    .skill-card {
-        background: white;
-        border-radius: 10px;
-        padding: 20px;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(75, 31, 26, 0.1);
-        border: 2px solid #e6187f;
-        margin: 10px;
-    }
-
-    .skill-card h4 {
-        color: #4B1F1A;
-        margin-bottom: 10px;
-    }
-
-    .skill-card p {
-        color: #4B1F1A;
-    }
-
-    /* Section Titles */
-    .section-title {
-        text-align: center;
-        font-size: 2.5rem;
-        color: #4B1F1A;
-        margin: 50px 0 30px 0;
-        position: relative;
-        padding-bottom: 15px;
-    }
-
-    /* Buttons */
-    .stButton > button {
-        background: #FFD95B;
-        color: #4B1F1A;
-        border: 2px solid #e6187f;
-        border-radius: 25px;
-        padding: 10px 25px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        width: 100%;
-    }
-
-    .stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(230, 24, 127, 0.3);
-        background: #e6187f;
-        color: white;
-    }
-
-    /* Links */
-    a {
-        color: #4B1F1A;
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    a:hover {
-        color: #e6187f;
-    }
-
     /* Text colors */
     h1, h2, h3, h4, h5, h6 {
         color: #4B1F1A !important;
@@ -206,18 +107,13 @@ st.markdown("""
     p, li {
         color: #4B1F1A !important;
     }
-
-    /* Center content */
-    .centered-content {
-        text-align: center;
-    }
 </style>
 """, unsafe_allow_html=True)
 
-# Hero Section - Breaking it down into Streamlit components
+# Hero Section
 st.markdown('<div class="hero">', unsafe_allow_html=True)
 
-# Profile Picture (using a placeholder - replace with actual image)
+# Profile Picture (replace with your actual image URL)
 st.markdown("""
 <div style="text-align: center;">
     <img src="https://via.placeholder.com/180" alt="Julia Jiang" class="profile-pic">
@@ -244,109 +140,15 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Tagline
-st.markdown('<p class="tagline">Software Developer | Creative Problem Solver | Technology Enthusiast</p>', unsafe_allow_html=True)
+st.markdown('<p class="tagline">Data Scientist | AI/ML Research | Turning Data into Impactful Insights</p>', unsafe_allow_html=True)
 
 # About text
 st.markdown("""
 <div class="about-text">
-    <p>I'm a passionate software developer with a love for creating innovative solutions and beautiful user experiences. With expertise in full-stack development, I enjoy tackling complex problems and turning ideas into reality.</p>
-    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.</p>
-    <p>I'm always open to new opportunities and collaborations. Let's build something amazing together!</p>
+    <p>I'm a passionate data scientist with expertise in AI/ML research and turning complex data into impactful business insights. Currently pursuing a B.S. in Computer Science with Departmental Honors at Wake Forest University, I specialize in deep reinforcement learning, explainable AI, and end-to-end data science solutions.</p>
+    <p>With hands-on experience in cloud-based ML systems, RAG architectures, and production codebases, I excel at building analytical models, interactive visualizations, and delivering findings that drive business impact. My research background includes designing DRL trading systems and exploring explainability methods in neural networks.</p>
+    <p>I thrive in fast-paced environments, comfortable navigating ambiguity to evaluate complex data from multiple angles. Always eager to collaborate on innovative data science projects that solve real-world problems!</p>
 </div>
 """, unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
-
-# Featured Projects Section
-st.markdown('<h2 class="section-title">Featured Projects</h2>', unsafe_allow_html=True)
-
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    st.markdown("""
-    <div class="project-card">
-        <span style="background: #e6187f; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Featured</span>
-        <h3>Project Name</h3>
-        <p>A brief description of your project. Explain what it does, the problem it solves, and what makes it unique. This should be engaging and informative.</p>
-        <div>
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">Node.js</span>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-    st.link_button("View Code", "https://github.com/juliajiang218/project-repo")
-
-with col2:
-    st.markdown("""
-    <div class="project-card">
-        <h3>Another Project</h3>
-        <p>Description of another amazing project you've built. Highlight the key features and technologies used.</p>
-        <div>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">Express</span>
-            <span class="tech-tag">MongoDB</span>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-    st.link_button("View Code", "https://github.com/juliajiang218/project-repo")
-
-with col3:
-    st.markdown("""
-    <div class="project-card">
-        <h3>Third Project</h3>
-        <p>Showcase your third project with a compelling description. Explain your role, the technologies used, and the impact it made.</p>
-        <div>
-            <span class="tech-tag">Vue.js</span>
-            <span class="tech-tag">Firebase</span>
-            <span class="tech-tag">CSS3</span>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-    st.link_button("View Code", "https://github.com/juliajiang218/project-repo")
-
-# Skills Section
-st.markdown('<h2 class="section-title">Skills</h2>', unsafe_allow_html=True)
-
-col1, col2, col3, col4 = st.columns(4)
-
-with col1:
-    st.markdown("""
-    <div class="skill-card">
-        <h4>Frontend</h4>
-        <p>React, Vue, HTML/CSS</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col2:
-    st.markdown("""
-    <div class="skill-card">
-        <h4>Backend</h4>
-        <p>Node.js, Python, Java</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col3:
-    st.markdown("""
-    <div class="skill-card">
-        <h4>Database</h4>
-        <p>MongoDB, PostgreSQL</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col4:
-    st.markdown("""
-    <div class="skill-card">
-        <h4>Tools</h4>
-        <p>Git, Docker, AWS</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-# Footer
-st.markdown("---")
-st.markdown("""
-<div style="text-align: center; color: #4B1F1A; padding: 20px;">
-    <p>&copy; 2025 Julia Jiang. All rights reserved.</p>
-    <p>Built with passion and code | <a href="https://github.com/juliajiang218" target="_blank">GitHub</a></p>
-</div>
-""", unsafe_allow_html=True)
