@@ -232,7 +232,7 @@ st.markdown("""
 # Load and display the profile image
 try:
     from PIL import Image
-    profile_img = Image.open('/mnt/user-data/outputs/profile_image.png')
+    profile_img = Image.open('headshot.jpeg')
     col_img1, col_img2, col_img3 = st.columns([1, 1, 1])
     with col_img2:
         st.markdown('<div class="profile-image">', unsafe_allow_html=True)
@@ -271,9 +271,10 @@ st.markdown('<p class="tagline">Data Scientist | AI/ML Research | Turning Data i
 # About text
 st.markdown("""
 <div class="about-text">
-    <p>I'm a passionate data scientist with expertise in AI/ML research and turning complex data into impactful business insights. Currently pursuing a B.S. in Computer Science with Departmental Honors at Wake Forest University, I specialize in deep reinforcement learning, explainable AI, and end-to-end data science solutions.</p>
+    <p>I'm a passionate data scientist with expertise in AI/ML research and turning complex data into impactful business insights. Currently pursuing a <b>B.S. in Computer Science with Departmental Honors at Wake Forest University</b>, I specialize in deep reinforcement learning, explainable AI, and end-to-end data science solutions.</p>
     <p>With hands-on experience in cloud-based ML systems, RAG architectures, and production codebases, I excel at building analytical models, interactive visualizations, and delivering findings that drive business impact. My research background includes designing DRL trading systems and exploring explainability methods in neural networks.</p>
     <p>I thrive in fast-paced environments, comfortable navigating ambiguity to evaluate complex data from multiple angles. Always eager to collaborate on innovative data science projects that solve real-world problems!</p>
+    <p>I am a very curious learner that gain insights from every day life 😊 </p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -283,7 +284,7 @@ st.markdown('<h2 class="section-title">Featured Projects</h2>', unsafe_allow_htm
 # First row - Law Compliance RAG (full width)
 st.markdown("""
 <div class="project-card">
-    <span style="background: #e6187f; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Featured</span>
+    <span style="background: #e6187f; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Ongoing Honor Project</span>
     <h3>Law Compliance RAG Assistant</h3>
     <p>Designed an AI system that retrieves and summarizes relevant laws and regulations to answer compliance queries with citations. Built a hybrid search pipeline combining keyword search, semantic search, and metadata filtering for production-grade performance.</p>
     <div>
@@ -294,7 +295,6 @@ st.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
-st.link_button("View Project", "https://github.com/juliajiang218")
 
 # Second row - DRL Trading System and ETL Pipeline (side by side)
 col1, col2 = st.columns(2)
@@ -304,14 +304,15 @@ with col1:
     <div class="project-card">
         <h3>DRL Trading System</h3>
         <div style="margin: 15px 0;">
-            <img src="https://via.placeholder.com/300x200?text=DRL+Trading+Demo" alt="DRL Trading System" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 2px solid #e6187f;">
+            <img src="Jiang_URECA.jpg" alt="DRL Trading System" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 2px solid #e6187f;">
         </div>
         <p>Engineered a cloud-based deep reinforcement learning trading system with 181-dimensional feature engineering pipelines using 20+ years of financial data. Deployed on AWS with real-time data ingestion and TensorFlow monitoring.</p>
         <div>
             <span class="tech-tag">Python</span>
             <span class="tech-tag">AWS Cloud</span>
             <span class="tech-tag">TensorFlow</span>
-            <span class="tech-tag">Deep RL</span>
+            <span class="tech-tag">Feature Engineering</span>
+            <span class="tech-tag">High-Dimensional Data Analysis</span>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -322,14 +323,14 @@ with col2:
     <div class="project-card">
         <h3>ETL Movie Recommendation Pipeline</h3>
         <div style="margin: 15px 0;">
-            <img src="https://via.placeholder.com/300x200?text=ETL+Pipeline+Demo" alt="ETL Movie Pipeline" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 2px solid #e6187f;">
+            <img src="ERD Diagram.jpg" alt="ETL Movie Pipeline" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 2px solid #e6187f;">
         </div>
         <p>Built a robust ETL pipeline ingesting and transforming 1,000+ movie records from multiple sources, achieving sub-second query performance. Designed normalized relational schemas and indexes to handle large-scale data efficiently.</p>
         <div>
             <span class="tech-tag">SQL</span>
             <span class="tech-tag">ETL Process</span>
             <span class="tech-tag">Database Design</span>
-            <span class="tech-tag">SQLite</span>
+            <span class="tech-tag">SQL</span>
         </div>
     </div>
     """, unsafe_allow_html=True)
