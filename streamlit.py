@@ -41,7 +41,15 @@ st.markdown("""
         box-shadow: 0 10px 30px rgba(75, 31, 26, 0.2);
     }
 
-    /* Style profile images */
+    /* Style profile images - apply to streamlit image container */
+    [data-testid="stImage"] img {
+        border-radius: 50% !important;
+        border: 5px solid #e6187f !important;
+        box-shadow: 0 10px 30px rgba(75, 31, 26, 0.2) !important;
+        object-fit: cover !important;
+    }
+
+    /* Additional styling for centered profile image */
     .profile-image img {
         border-radius: 50%;
         border: 5px solid #e6187f;
@@ -233,12 +241,13 @@ st.markdown("""
 try:
     from PIL import Image
     profile_img = Image.open('headshot.jpeg')
+    # Center the profile image
     col_img1, col_img2, col_img3 = st.columns([1, 1, 1])
     with col_img2:
-        st.markdown('<div class="profile-image">', unsafe_allow_html=True)
+        st.markdown('<div style="text-align: center;">', unsafe_allow_html=True)
         st.image(profile_img, width=180, use_container_width=False)
         st.markdown('</div>', unsafe_allow_html=True)
-except:
+except Exception as e:
     # Fallback to placeholder if image loading fails
     st.markdown("""
     <div style="text-align: center;">
@@ -303,9 +312,16 @@ with col1:
     st.markdown("""
     <div class="project-card">
         <h3>DRL Trading System</h3>
-        <div style="margin: 15px 0;">
-            <img src="Jiang_URECA.jpg" alt="DRL Trading System" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 2px solid #e6187f;">
-        </div>
+    """, unsafe_allow_html=True)
+
+    # Load and display project image
+    try:
+        drl_img = Image.open('Jiang_URECA.jpg')
+        st.image(drl_img, use_container_width=True)
+    except:
+        pass
+
+    st.markdown("""
         <p>Engineered a cloud-based deep reinforcement learning trading system with 181-dimensional feature engineering pipelines using 20+ years of financial data. Deployed on AWS with real-time data ingestion and TensorFlow monitoring.</p>
         <div>
             <span class="tech-tag">Python</span>
@@ -322,15 +338,22 @@ with col2:
     st.markdown("""
     <div class="project-card">
         <h3>ETL Movie Recommendation Pipeline</h3>
-        <div style="margin: 15px 0;">
-            <img src="ERD Diagram.jpg" alt="ETL Movie Pipeline" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 2px solid #e6187f;">
-        </div>
+    """, unsafe_allow_html=True)
+
+    # Load and display project image
+    try:
+        etl_img = Image.open('ERD Diagram.jpg')
+        st.image(etl_img, use_container_width=True)
+    except:
+        pass
+
+    st.markdown("""
         <p>Built a robust ETL pipeline ingesting and transforming 1,000+ movie records from multiple sources, achieving sub-second query performance. Designed normalized relational schemas and indexes to handle large-scale data efficiently.</p>
         <div>
             <span class="tech-tag">SQL</span>
             <span class="tech-tag">ETL Process</span>
             <span class="tech-tag">Database Design</span>
-            <span class="tech-tag">SQL</span>
+            <span class="tech-tag">SQLite</span>
         </div>
     </div>
     """, unsafe_allow_html=True)
