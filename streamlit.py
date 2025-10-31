@@ -8,12 +8,12 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Custom CSS with lemon yellow background, gold text, and dark rose pink outlines
+# Custom CSS with new color scheme
 st.markdown("""
 <style>
     /* Main background and text colors */
     .stApp {
-        background-color: #FFF44F;
+        background-color: #FFF9D6;
     }
 
     /* Hide Streamlit branding */
@@ -22,31 +22,54 @@ st.markdown("""
 
     /* Hero Section */
     .hero {
-        background: linear-gradient(135deg, #FFD700 0%, #B8860B 100%);
-        color: white;
-        padding: 60px 20px 40px 20px;
+        background: #FFD95B;
+        color: #4B1F1A;
+        padding: 80px 20px 60px 20px;
         text-align: center;
         border-radius: 0;
-        margin: -6rem -6rem 0rem -6rem;
+        margin: -6rem -6rem 3rem -6rem;
+        position: relative;
+    }
+
+    /* Profile Picture */
+    .profile-pic {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 5px solid #e6187f;
+        object-fit: cover;
+        margin: 0 auto 30px auto;
+        display: block;
+        background: white;
+        box-shadow: 0 10px 30px rgba(75, 31, 26, 0.2);
+    }
+
+    /* Name and social container */
+    .name-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
     }
 
     .hero h1 {
         font-size: 3.5rem;
-        margin-bottom: 10px;
+        margin: 0 15px;
         animation: fadeInDown 1s ease;
-        display: inline-block;
+        color: #4B1F1A !important;
     }
 
-    .hero p {
+    .hero .tagline {
         font-size: 1.3rem;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
+        color: #4B1F1A;
     }
 
     /* Social Icons */
     .social-icons {
         display: inline-flex;
         gap: 15px;
-        margin-left: 20px;
         vertical-align: middle;
     }
 
@@ -56,40 +79,34 @@ st.markdown("""
         height: 40px;
         border-radius: 50%;
         background: white;
-        color: #B8860B;
+        color: #4B1F1A;
         text-align: center;
         line-height: 40px;
         text-decoration: none;
         font-size: 1.2rem;
         transition: all 0.3s ease;
+        border: 2px solid #e6187f;
     }
 
     .social-icon:hover {
-        background: #B8860B;
+        background: #e6187f;
         color: white;
         transform: scale(1.1);
     }
 
-    /* About section in hero */
-    .about-in-hero {
-        background: #FFFACD;
-        padding: 30px;
-        border-radius: 15px;
-        margin: 30px auto 0 auto;
+    /* About section integrated */
+    .about-integrated {
         max-width: 900px;
-        text-align: left;
+        margin: 30px auto 0 auto;
+        text-align: center;
+        color: #4B1F1A;
     }
 
-    .about-in-hero h2 {
-        color: #B8860B;
-        font-size: 2rem;
-        margin-bottom: 15px;
-    }
-
-    .about-in-hero p {
-        color: #B8860B;
+    .about-integrated p {
+        font-size: 1.1rem;
         line-height: 1.8;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        color: #4B1F1A;
     }
 
     /* Project Cards */
@@ -98,35 +115,35 @@ st.markdown("""
         border-radius: 15px;
         padding: 25px;
         margin: 20px 0;
-        box-shadow: 0 10px 30px rgba(184, 134, 11, 0.2);
+        box-shadow: 0 10px 30px rgba(75, 31, 26, 0.1);
         border: 3px solid #e6187f;
         transition: transform 0.3s ease;
     }
 
     .project-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(184, 134, 11, 0.3);
+        box-shadow: 0 15px 40px rgba(75, 31, 26, 0.2);
     }
 
     .project-card h3 {
-        color: #B8860B;
+        color: #4B1F1A;
         font-size: 1.5rem;
         margin-bottom: 15px;
     }
 
     .project-card p {
-        color: #B8860B;
+        color: #4B1F1A;
         line-height: 1.8;
     }
 
     /* Tech Tags */
     .tech-tag {
         display: inline-block;
-        background: #FFFACD;
+        background: #FFD95B;
         padding: 5px 12px;
         border-radius: 15px;
         font-size: 0.85rem;
-        color: #B8860B;
+        color: #4B1F1A;
         margin: 5px 5px 5px 0;
         font-weight: 500;
     }
@@ -137,25 +154,25 @@ st.markdown("""
         border-radius: 10px;
         padding: 20px;
         text-align: center;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 5px 15px rgba(75, 31, 26, 0.1);
         border: 2px solid #e6187f;
         margin: 10px;
     }
 
     .skill-card h4 {
-        color: #B8860B;
+        color: #4B1F1A;
         margin-bottom: 10px;
     }
 
     .skill-card p {
-        color: #B8860B;
+        color: #4B1F1A;
     }
 
     /* Section Titles */
     .section-title {
         text-align: center;
         font-size: 2.5rem;
-        color: #B8860B;
+        color: #4B1F1A;
         margin: 50px 0 30px 0;
         position: relative;
         padding-bottom: 15px;
@@ -163,9 +180,9 @@ st.markdown("""
 
     /* Buttons */
     .stButton > button {
-        background: linear-gradient(135deg, #FFD700 0%, #B8860B 100%);
-        color: white;
-        border: none;
+        background: #FFD95B;
+        color: #4B1F1A;
+        border: 2px solid #e6187f;
         border-radius: 25px;
         padding: 10px 25px;
         font-weight: 600;
@@ -174,27 +191,29 @@ st.markdown("""
 
     .stButton > button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        box-shadow: 0 5px 15px rgba(230, 24, 127, 0.3);
+        background: #e6187f;
+        color: white;
     }
 
     /* Links */
     a {
-        color: #B8860B;
+        color: #4B1F1A;
         text-decoration: none;
         font-weight: 600;
     }
 
     a:hover {
-        color: #FFD700;
+        color: #e6187f;
     }
 
     /* Text colors */
     h1, h2, h3, h4, h5, h6 {
-        color: #B8860B !important;
+        color: #4B1F1A !important;
     }
 
     p, li {
-        color: #B8860B !important;
+        color: #4B1F1A !important;
     }
 
     /* Animations */
@@ -211,10 +230,13 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Hero Section with About
+# Hero Section with integrated About
 st.markdown("""
 <div class="hero">
-    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+    <!-- Profile Picture - Replace the src with your actual image URL or path -->
+    <img src="https://via.placeholder.com/180" alt="Julia Jiang" class="profile-pic">
+
+    <div class="name-container">
         <h1>Julia Jiang</h1>
         <div class="social-icons">
             <a href="https://github.com/juliajiang218" target="_blank" class="social-icon" title="GitHub">
@@ -229,10 +251,10 @@ st.markdown("""
             </a>
         </div>
     </div>
-    <p>Software Developer | Creative Problem Solver | Technology Enthusiast</p>
 
-    <div class="about-in-hero">
-        <h2>About Me</h2>
+    <p class="tagline">Software Developer | Creative Problem Solver | Technology Enthusiast</p>
+
+    <div class="about-integrated">
         <p>I'm a passionate software developer with a love for creating innovative solutions and beautiful user experiences. With expertise in full-stack development, I enjoy tackling complex problems and turning ideas into reality.</p>
         <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.</p>
         <p>I'm always open to new opportunities and collaborations. Let's build something amazing together!</p>
@@ -248,7 +270,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.markdown("""
     <div class="project-card">
-        <span style="background: #FFD700; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Featured</span>
+        <span style="background: #e6187f; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Featured</span>
         <h3>Project Name</h3>
         <p>A brief description of your project. Explain what it does, the problem it solves, and what makes it unique. This should be engaging and informative.</p>
         <div>
@@ -328,7 +350,7 @@ with col4:
 # Footer
 st.markdown("---")
 st.markdown("""
-<div style="text-align: center; color: #B8860B; padding: 20px;">
+<div style="text-align: center; color: #4B1F1A; padding: 20px;">
     <p>&copy; 2025 Julia Jiang. All rights reserved.</p>
     <p>Built with passion and code | <a href="https://github.com/juliajiang218" target="_blank">GitHub</a></p>
 </div>
