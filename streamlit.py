@@ -41,12 +41,18 @@ st.markdown("""
         box-shadow: 0 10px 30px rgba(75, 31, 26, 0.2);
     }
 
-    /* Style profile images - apply to streamlit image container */
-    [data-testid="stImage"] img {
+    /* Style profile images - apply rounded border only to profile pic */
+    .profile-container [data-testid="stImage"] img {
         border-radius: 50% !important;
         border: 5px solid #e6187f !important;
         box-shadow: 0 10px 30px rgba(75, 31, 26, 0.2) !important;
         object-fit: cover !important;
+    }
+
+    /* Project images - keep rectangular */
+    .project-card [data-testid="stImage"] img {
+        border-radius: 10px !important;
+        border: none !important;
     }
 
     /* Additional styling for centered profile image */
@@ -236,28 +242,30 @@ st.markdown("""
 
 # Hero Section
 
-# Profile Picture
-# Load and display the profile image
+# Vertical layout: Profile centered above name
+st.markdown('<div style="text-align: center; margin: 40px 0;">', unsafe_allow_html=True)
+
+# Profile Picture - centered
 try:
     from PIL import Image
-    profile_img = Image.open('headshot.jpeg')
-    # Center the profile image
-    col_img1, col_img2, col_img3 = st.columns([1, 1, 1])
-    with col_img2:
-        st.markdown('<div style="text-align: center;">', unsafe_allow_html=True)
+    profile_img = Image.open('headshot2.jpg')
+    # Center the profile image with wrapper div
+    st.markdown('<div class="profile-container" style="display: flex; justify-content: center; margin-bottom: 20px;">', unsafe_allow_html=True)
+    col1, col2, col3 = st.columns([1, 1, 1])
+    with col2:
         st.image(profile_img, width=180, use_container_width=False)
-        st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
 except Exception as e:
     # Fallback to placeholder if image loading fails
     st.markdown("""
-    <div style="text-align: center;">
+    <div class="profile-container" style="text-align: center; margin-bottom: 20px;">
         <img src="https://via.placeholder.com/180" alt="Julia Jiang" class="profile-pic">
     </div>
     """, unsafe_allow_html=True)
 
-# Name and Social Icons (side by side)
+# Name and Social Icons (side by side, centered below profile)
 st.markdown("""
-<div style="display: flex; align-items: center; justify-content: center; margin: 20px 0; flex-wrap: wrap; gap: 20px;">
+<div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px;">
     <h1 style="color: #4B1F1A; font-size: 3.5rem; margin: 0;">Julia Jiang</h1>
     <div class="social-icons" style="margin: 0;">
         <a href="https://github.com/juliajiang218" target="_blank" class="social-icon" title="GitHub">
@@ -271,6 +279,8 @@ st.markdown("""
             </svg>
         </a>
     </div>
+</div>
+
 </div>
 """, unsafe_allow_html=True)
 
