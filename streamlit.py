@@ -285,15 +285,15 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Tagline
-st.markdown('<p class="tagline">Data Scientist | AI/ML Research | Turning Data into Impactful Insights</p>', unsafe_allow_html=True)
+# st.markdown('<p class="tagline">Data Scientist | AI/ML Applied-Research | Turning Data into Impactful Insights</p>', unsafe_allow_html=True)
 
 # About text
 st.markdown("""
 <div class="about-text">
-    <p>I'm a passionate data scientist with expertise in AI/ML research and turning complex data into impactful business insights. Currently pursuing a <b>B.S. in Computer Science with Departmental Honors at Wake Forest University</b>, I specialize in deep reinforcement learning, explainable AI, and end-to-end data science solutions.</p>
+    <p>I'm a passionate data scientist with experience in AI/ML research and turning complex data into impactful business insights. Currently pursuing a <b>B.S. in Computer Science with Departmental Honors at Wake Forest University</b>, I specialize in deep reinforcement learning, explainable AI, and end-to-end data science solutions.</p>
     <p>With hands-on experience in cloud-based ML systems, RAG architectures, and production codebases, I excel at building analytical models, interactive visualizations, and delivering findings that drive business impact. My research background includes designing DRL trading systems and exploring explainability methods in neural networks.</p>
     <p>I thrive in fast-paced environments, comfortable navigating ambiguity to evaluate complex data from multiple angles. Always eager to collaborate on innovative data science projects that solve real-world problems!</p>
-    <p>I am a very curious learner that gain insights from every day life 😊 </p>
+    <p>I am a very curious learner who gains insights from everyday life!</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -305,7 +305,12 @@ st.markdown("""
 <div class="project-card">
     <span style="background: #e6187f; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Ongoing Honor Project</span>
     <h3>Law Compliance RAG Assistant</h3>
-    <p>Designed an AI system that retrieves and summarizes relevant laws and regulations to answer compliance queries with citations. Built a hybrid search pipeline combining keyword search, semantic search, and metadata filtering for production-grade performance.</p>
+    <p>• Design an AI system that retrieves and summarizes relevant laws, regulations to answer compliance queries
+with citations under CS faculty mentorship
+• Build and evaluate a hybrid search pipeline that combines keyword search, semantic search, and metadata
+filtering
+• Monitor and evaluate a RAG system both at the component level and end-to-end and consider the tradeoffs
+in system performance, cost, capability, and security faced by production RAG systems</p>
     <div>
         <span class="tech-tag">Claude AI</span>
         <span class="tech-tag">RAG</span>
@@ -332,7 +337,12 @@ with col1:
         pass
 
     st.markdown("""
-        <p>Engineered a cloud-based deep reinforcement learning trading system with 181-dimensional feature engineering pipelines using 20+ years of financial data. Deployed on AWS with real-time data ingestion and TensorFlow monitoring.</p>
+        <p>• Worked with existing libraries and large codebases (OpenAI/Stable-Baseline3, FinRL) under Dr. Sarra Alqahtani
+(specialize in explainable multi-agent reinforcement learning) for a 13-weeks URECA research program.
+• Designed and deployed a deep reinforcement learning trading system trained over 10M timesteps on HPC
+clusters, involving end-to-end data engineering, model training, and evaluation, under mentorship and ML
+documentations.
+• Researched and presented different explainability methods regarding Neural Network Model Interpretability.</p>
         <div>
             <span class="tech-tag">Python</span>
             <span class="tech-tag">AWS Cloud</span>
@@ -410,16 +420,16 @@ col1, col2, col3, col4 = st.columns(4)
 with col1:
     st.markdown("""
     <div class="skill-card">
-        <h4>Data Science & ML</h4>
-        <p>TensorFlow, Deep Learning, Reinforcement Learning, Anomaly Detection, Feature Engineering</p>
+        <h4>Data Science</h4>
+        <p> Feature Engineering, ETL, Data Visualization, Data Analysis, Data Mining</p>
     </div>
     """, unsafe_allow_html=True)
 
 with col2:
     st.markdown("""
     <div class="skill-card">
-        <h4>AI & NLP</h4>
-        <p>RAG, LangChain, Claude AI, Vector Databases, Explainable AI, Neural Networks</p>
+        <h4>AI & ML</h4>
+        <p>LangChain, Claude AI, RAG, TensorFlow, Vector Databases, Deep Learning, Reinforcement Learning, Anomaly Detection, Recommendation Systems</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -427,15 +437,15 @@ with col3:
     st.markdown("""
     <div class="skill-card">
         <h4>Cloud & Infrastructure</h4>
-        <p>AWS Cloud, HPC Clusters, Docker, Git, CI/CD Pipelines</p>
+        <p>AWS Cloud, Architecting HPC Clusters, Slurm scripts, Docker, Git, CI/CD Pipelines</p>
     </div>
     """, unsafe_allow_html=True)
 
 with col4:
     st.markdown("""
     <div class="skill-card">
-        <h4>Programming</h4>
-        <p>Python, JavaScript, SQL, Java, C/C++, Bash</p>
+        <h4>Programming & Frameworks</h4>
+        <p>Python, HTML/CSS/JavaScript, SQL, Java, C/C++, Bash, React, Next.js, Streamlit, TensorFlow, MySQL, Scikit-Learn, Stable-Baseline3/OpenAI-Gym (DRL library)</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -454,8 +464,7 @@ st.markdown("""
         <span class="tech-tag">Software Engineering</span>
         <span class="tech-tag">HPC Architecture</span>
     </div>
-    <p><strong>Relevant Coursework:</strong> Safety and Explainability of Reinforcement Learning (Graduate), Data Mining, Database Systems, Cloud Computing, Architecting HPC Clusters</p>
-</div>
+    <p><strong>Relevant Coursework:</strong> (graduate-level) Safety and Explainability of Reinforcement Learning, Cloud Computing, Architecting HPC Clusters, Data Mining, Data Structure and Algorithm, Software Engineering, Database Management Systems, Computer Systems I & II, Programming Language. </p>
 """, unsafe_allow_html=True)
 
 # Footer
