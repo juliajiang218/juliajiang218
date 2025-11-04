@@ -80,7 +80,7 @@ st.markdown("""
     /* Name and Title */
     .hero-name {
         font-family: 'Playfair Display', serif;
-        font-size: 2.8rem;
+        font-size: 2.5rem;
         font-weight: 700;
         color: #4B1F1A;
         margin: 0;
@@ -89,7 +89,7 @@ st.markdown("""
     }
 
     .hero-title {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         color: #e6187f;
         font-weight: 600;
         margin-bottom: 30px;
@@ -141,7 +141,7 @@ st.markdown("""
     .section-header {
         text-align: center;
         font-family: 'Playfair Display', serif;
-        font-size: 3rem;
+        font-size: 2.5rem;
         color: #4B1F1A;
         margin: 50px 0 30px 0;
         position: relative;
@@ -197,7 +197,7 @@ st.markdown("""
 
     .project-card h3 {
         color: #4B1F1A;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         margin-bottom: 15px;
         font-weight: 700;
     }
@@ -279,7 +279,7 @@ st.markdown("""
 
     .info-card h3 {
         color: #4B1F1A;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         margin-bottom: 10px;
         font-weight: 700;
     }
@@ -406,23 +406,23 @@ st.markdown("""
 # Hero Section
 st.markdown('<div class="hero-section">', unsafe_allow_html=True)
 
-# Profile Picture, Name, and Social Icons in one horizontal line
-st.markdown("""
-<div style="display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 30px;">
-    <div class="profile-container">
-""", unsafe_allow_html=True)
-
+# Profile Picture - centered
+st.markdown('<div class="profile-container" style="margin-bottom: 25px;">', unsafe_allow_html=True)
 try:
     from PIL import Image
     profile_img = Image.open('headshot2.jpg')
-    st.image(profile_img, width=120)
+    col1, col2, col3 = st.columns([1, 1, 1])
+    with col2:
+        st.image(profile_img, width=120)
 except:
-    st.markdown('<img src="https://via.placeholder.com/120" class="profile-pic" style="width: 120px; height: 120px;">', unsafe_allow_html=True)
+    st.markdown('<img src="https://via.placeholder.com/120" class="profile-pic" style="width: 120px; height: 120px; margin: 0 auto;">', unsafe_allow_html=True)
+st.markdown('</div>', unsafe_allow_html=True)
 
+# Name and Social Icons on same line
 st.markdown("""
-    </div>
+<div style="display: flex; align-items: center; justify-content: center; gap: 25px; margin-bottom: 30px; flex-wrap: wrap;">
     <h1 class="hero-name" style="margin: 0; animation: none;">Julia Jiang</h1>
-    <div class="social-links" style="margin: 0; animation: none;">
+    <div class="social-links" style="margin: 0; animation: none; gap: 15px;">
         <a href="https://github.com/juliajiang218" target="_blank" class="social-icon" title="GitHub">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
@@ -437,9 +437,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Title
-st.markdown('<p class="hero-title">Data Scientist | AI/ML Research | Turning Data into Impact</p>', unsafe_allow_html=True)
-
 # Hero Description
 st.markdown("""
 <p class="hero-description">
@@ -450,6 +447,29 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
+
+# Highlights Section (Two cards)
+st.markdown('<h2 class="section-header">Highlights</h2>', unsafe_allow_html=True)
+
+col1, col2 = st.columns([1, 1])
+
+with col1:
+    st.markdown("""
+    <div class="info-card">
+        <h3>🎓 Academic Background</h3>
+        <p>With hands-on experience in cloud-based ML systems, RAG architectures, and production codebases,
+        I excel at building analytical models, interactive visualizations, and delivering findings that drive business impact.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown("""
+    <div class="info-card">
+        <h3>🚀 What Drives Me</h3>
+        <p>I thrive in fast-paced environments, comfortable navigating ambiguity to evaluate complex data from multiple angles.
+        Always eager to collaborate on innovative data science projects that solve real-world problems!</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 # Professional Experience Section
 st.markdown('<h2 class="section-header">Professional Experience</h2>', unsafe_allow_html=True)
