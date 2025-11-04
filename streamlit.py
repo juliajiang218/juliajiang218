@@ -448,32 +448,10 @@ st.markdown("""
 
 st.markdown('</div>', unsafe_allow_html=True)
 
-# Highlights Section (Two cards)
-st.markdown('<h2 class="section-header">Highlights</h2>', unsafe_allow_html=True)
-
-col1, col2 = st.columns([1, 1])
-
-with col1:
-    st.markdown("""
-    <div class="info-card">
-        <h3>🎓 Academic Background</h3>
-        <p>With hands-on experience in cloud-based ML systems, RAG architectures, and production codebases,
-        I excel at building analytical models, interactive visualizations, and delivering findings that drive business impact.</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col2:
-    st.markdown("""
-    <div class="info-card">
-        <h3>🚀 What Drives Me</h3>
-        <p>I thrive in fast-paced environments, comfortable navigating ambiguity to evaluate complex data from multiple angles.
-        Always eager to collaborate on innovative data science projects that solve real-world problems!</p>
-    </div>
-    """, unsafe_allow_html=True)
-
 # Professional Experience Section
 st.markdown('<h2 class="section-header">Professional Experience</h2>', unsafe_allow_html=True)
 
+# First row
 col1, col2 = st.columns(2)
 
 with col1:
@@ -506,6 +484,43 @@ with col2:
             <span class="tech-tag">Next.js</span>
             <span class="tech-tag">JavaScript</span>
             <span class="tech-tag">CI/CD</span>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+# Second row
+col1, col2 = st.columns(2)
+
+with col1:
+    st.markdown("""
+    <div class="info-card">
+        <h3>Data Science Intern</h3>
+        <h4>Company Name | Month Year - Month Year</h4>
+        <p>
+            Description of your role and achievements. Built data pipelines, created visualizations,
+            and delivered insights that drove business decisions.
+        </p>
+        <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Data Analysis</span>
+            <span class="tech-tag">Visualization</span>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown("""
+    <div class="info-card">
+        <h3>Research Assistant</h3>
+        <h4>Institution Name | Month Year - Month Year</h4>
+        <p>
+            Description of your research work. Conducted experiments, analyzed data,
+            and contributed to research publications.
+        </p>
+        <div class="tech-tags">
+            <span class="tech-tag">Research</span>
+            <span class="tech-tag">Data Analysis</span>
+            <span class="tech-tag">ML</span>
         </div>
     </div>
     """, unsafe_allow_html=True)
