@@ -34,7 +34,7 @@ st.markdown("""
     /* Hero Section */
     .hero-section {
         text-align: center;
-        padding: 60px 20px 80px 20px;
+        padding: 40px 20px 50px 20px;
         max-width: 1200px;
         margin: 0 auto;
         animation: fadeIn 1s ease-in;
@@ -143,7 +143,7 @@ st.markdown("""
         font-family: 'Playfair Display', serif;
         font-size: 3rem;
         color: #4B1F1A;
-        margin: 80px 0 50px 0;
+        margin: 50px 0 30px 0;
         position: relative;
         padding-bottom: 20px;
     }
@@ -449,26 +449,42 @@ st.markdown("""
 
 st.markdown('</div>', unsafe_allow_html=True)
 
-# About Section
-st.markdown('<h2 class="section-header">About Me</h2>', unsafe_allow_html=True)
+# Professional Experience Section
+st.markdown('<h2 class="section-header">Professional Experience</h2>', unsafe_allow_html=True)
 
-col1, col2 = st.columns([1, 1])
+col1, col2 = st.columns(2)
 
 with col1:
     st.markdown("""
     <div class="info-card">
-        <h3>🎓 Background</h3>
-        <p>With hands-on experience in cloud-based ML systems, RAG architectures, and production codebases,
-        I excel at building analytical models, interactive visualizations, and delivering findings that drive business impact.</p>
+        <h3>AI/ML Research Assistant</h3>
+        <h4>Wake Forest CS Department | Jan 2025 - Aug 2025</h4>
+        <p>
+            Working with OpenAI/Stable-Baseline3 and FinRL libraries for explainable multi-agent reinforcement learning research.
+            Designed and deployed DRL trading systems trained over 10M timesteps on HPC clusters with end-to-end data engineering.
+        </p>
+        <div class="tech-tags">
+            <span class="tech-tag">Reinforcement Learning</span>
+            <span class="tech-tag">HPC Clusters</span>
+            <span class="tech-tag">Explainable AI</span>
+        </div>
     </div>
     """, unsafe_allow_html=True)
 
 with col2:
     st.markdown("""
     <div class="info-card">
-        <h3>🚀 What I Do</h3>
-        <p>I thrive in fast-paced environments, comfortable navigating ambiguity to evaluate complex data from multiple angles.
-        Always eager to collaborate on innovative data science projects that solve real-world problems!</p>
+        <h3>Software Engineer</h3>
+        <h4>SciQuel, Boston MA | Jan 2024 - Jun 2024</h4>
+        <p>
+            Implemented responsive UI components in Next.js ensuring seamless integration into production codebase.
+            Participated in CI/CD workflows with pull requests, branching, and peer code reviews for safe production updates.
+        </p>
+        <div class="tech-tags">
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">CI/CD</span>
+        </div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -558,45 +574,6 @@ with col2:
     </div>
     """, unsafe_allow_html=True)
     st.link_button("View Code", "https://github.com/juliajiang218/ETL-Pipeline.git")
-
-# Professional Experience Section
-st.markdown('<h2 class="section-header">Professional Experience</h2>', unsafe_allow_html=True)
-
-col1, col2 = st.columns(2)
-
-with col1:
-    st.markdown("""
-    <div class="info-card">
-        <h3>AI/ML Research Assistant</h3>
-        <h4>Wake Forest CS Department | Jan 2025 - Aug 2025</h4>
-        <p>
-            Working with OpenAI/Stable-Baseline3 and FinRL libraries for explainable multi-agent reinforcement learning research.
-            Designed and deployed DRL trading systems trained over 10M timesteps on HPC clusters with end-to-end data engineering.
-        </p>
-        <div class="tech-tags">
-            <span class="tech-tag">Reinforcement Learning</span>
-            <span class="tech-tag">HPC Clusters</span>
-            <span class="tech-tag">Explainable AI</span>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col2:
-    st.markdown("""
-    <div class="info-card">
-        <h3>Software Engineer</h3>
-        <h4>SciQuel, Boston MA | Jan 2024 - Jun 2024</h4>
-        <p>
-            Implemented responsive UI components in Next.js ensuring seamless integration into production codebase.
-            Participated in CI/CD workflows with pull requests, branching, and peer code reviews for safe production updates.
-        </p>
-        <div class="tech-tags">
-            <span class="tech-tag">Next.js</span>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">CI/CD</span>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
 
 # Technical Skills Section
 st.markdown('<h2 class="section-header">Technical Skills</h2>', unsafe_allow_html=True)
